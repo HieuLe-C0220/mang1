@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chữa bài từ điển</title>
+</head>
+<body>
+<body>
+<div>
+    Từ tìm kiếm: <input type="text" id="text" value="" width="20%"/><br>
+    <button onclick="translateTest()">Search</button>
+    <button type="reset">Reset</button><br>
+    <p id="ketQua">Nghĩa: </p>
+</div>
+<script>
+    let eng = ["String","indexOf","element","Value","replace","toUpperCase","toLowerCase"];
+    let vie = ["Chuỗi","trả về vị trí từ cần tìm","phần tử","giá trị","tìm và thay thế chuỗi","chuyển thành chữ hoa","chuyển thành chữ thường"];
+    function translateTest(){
+        let word = document.getElementById("text").value;
+        alert(word);//vi du kiem tra xem vao day chua
+        for (i = 0, j = 0; i < eng.length, j < vie.length; i++, j++) {
+            if (word === eng[i]) {
+                alert(vie[j]);
+                break;
+            } else if (word === vie[j]) {
+                alert(eng[j]);
+                break;
+            } else {
+                alert("We cant find that");
+            }
+        }
+    }
+</script>
+</body>
+</html>

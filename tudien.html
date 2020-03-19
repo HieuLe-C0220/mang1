@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Từ điển đơn giản</title>
+</head>
+<body>
+Từ tìm kiếm: <input type="text" id="text" width="20%"/><br/><br/>
+<button onclick="dich()">Search</button>
+<br/>
+<p id="ketQua">Nghĩa: </p>
+<script>
+    let eng = ["String","indexOf","element","Value","replace","toUpperCase","toLowerCase"];
+    let vie = ["Chuỗi","trả về vị trí từ cần tìm","phần tử","giá trị","tìm và thay thế chuỗi","chuyển thành chữ hoa","chuyển thành chữ thường"];
+    function dich() {
+        let index = 0; // Gán giá trị để đối chiếu trường hợp không tìm thấy
+        let word = document.getElementById("text").value;
+       // console.log(word);//dat log consol
+        for (i = 0; i < eng.length; i++){
+            if (word === eng[i]) {
+                document.getElementById('ketQua').innerHTML += vie[i];
+                index++;
+                break;
+            }
+            if (word === vie[i]) {
+                document.getElementById('ketQua').innerHTML += eng[i];
+                index ++;
+                break;
+            }
+        }
+        if (index === 0) {
+            alert("We cant find word");
+        }
+    }
+</script>
+</body>
+</html>
